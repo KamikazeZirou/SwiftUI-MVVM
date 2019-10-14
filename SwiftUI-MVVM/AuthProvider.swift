@@ -11,12 +11,18 @@ import Combine
 
 final class AuthProvider: AuthProviderProtocol {
     func login(userName: String, password: String) -> Future<User, Error> {
-        return Future<User, Error> { [weak self] promise in
+        return Future<User, Error> { promise in
             if userName == "foobar@example.com" && password == "password" {
                 promise(.success(User(id: 1, name: userName)))
             } else {
                 promise(.failure(AuthError.invalidUserNameOrPassword))
             }
+        }
+    }
+    
+    func logout() -> Future<Void, Error> {
+        return Future<Void, Error> { promise in
+            promise(.success(()))
         }
     }
 }

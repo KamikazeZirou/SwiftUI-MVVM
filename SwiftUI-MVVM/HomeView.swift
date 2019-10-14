@@ -10,13 +10,18 @@ import SwiftUI
 
 struct HomeView: View {
     @EnvironmentObject var session: Session
+    private var vm = HomeViewModel()
     
     var body: some View {
         VStack {
-            Text("Hello \(self.session.user!.name)!")
+            Text("Hello \(self.session.user?.name ?? "")!")
             Button(action: {
-                self.session.isLogin = false
-                self.session.user = nil
+                self.vm.logout()
+                    .receive(on: RunLoop.main)
+                    .sink(receiveCompletion: { err in
+                        self.session.user = nil
+                        self.session.isLogin = false
+                    }, receiveValue: {})
             }) {
                 Text("Logout")
             }
@@ -24,7 +29,7 @@ struct HomeView: View {
     }
 }
 
-struct AfterLoginView_Previews: PreviewProvider {
+struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
         HomeView()
     }

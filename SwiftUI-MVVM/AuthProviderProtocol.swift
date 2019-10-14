@@ -15,4 +15,5 @@ enum AuthError: Error {
 
 protocol AuthProviderProtocol {
     func login(userName: String, password: String) -> Future<User, Error>
+    func logout() -> Future<Void, Error>
 }
