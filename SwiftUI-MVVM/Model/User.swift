@@ -7,7 +7,6 @@
 //
 
 import Combine
-import SwiftUI
 
 struct User {
     var id: String = ""
