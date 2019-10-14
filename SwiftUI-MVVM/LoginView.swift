@@ -18,6 +18,7 @@ struct LoginView: View {
 
             TextField("User Name", text: $vm.userName)
                 .textFieldStyle(RoundedBorderTextFieldStyle())
+                .autocapitalization(UITextAutocapitalizationType.none)
 
             SecureField("Password", text: $vm.password)
                 .textFieldStyle(RoundedBorderTextFieldStyle())
