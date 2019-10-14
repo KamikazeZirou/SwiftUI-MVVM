@@ -11,11 +11,11 @@ import Combine
 
 final class AuthProvider: AuthProviderProtocol {
     func login(userId: String, password: String) -> Future<User, Error> {
-        return Future<User, Error> { promise in
+        return Future<User, Error> { promise in            
             if userId == "foobar@example.com" && password == "password" {
                 promise(.success(User(id: userId, name: "foobar")))
             } else {
-                promise(.failure(AuthError.invalidUserIdOrPassword))
+                promise(.failure(AuthError.invalidIdOrPassword))
             }
         }
     }

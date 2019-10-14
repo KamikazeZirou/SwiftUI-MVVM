@@ -19,25 +19,31 @@ final class LoginViewModel: ObservableObject {
     
     // MARK: Output
     @Published private(set) var isValid: Bool = false
-    
-    var validate: AnyPublisher<Bool, Never> {
-        Publishers
-            .CombineLatest($userId, $password)
-            .map { userId, password in
-                return !userId.isEmpty && !password.isEmpty
-            }
-            .eraseToAnyPublisher()
-    }
+    @Published private(set) var validationText: String = ""
     
     // MARK: Action
-    func login() -> Future<User, Error> {
+    func login() -> AnyPublisher<User, Error> {
         return authProvider.login(userId: userId, password: password)
+            .handleEvents(receiveCompletion: { completion in
+                switch completion {
+                case .finished:
+                    self.validationText = ""
+                case .failure:
+                    self.validationText = "Incorrect ID or password"
+                }
+            })
+            .eraseToAnyPublisher()
     }
     
     init(authProvider: AuthProviderProtocol = AuthProvider()) {
         self.authProvider = authProvider
         
-        _ = validate
+        _ = Publishers
+            .CombineLatest($userId, $password)
+            .map { (userId, password) in
+                return !userId.isEmpty && !password.isEmpty
+            }
+            .eraseToAnyPublisher()
             .receive(on: RunLoop.main)
             .assign(to: \.isValid, on: self)
     }

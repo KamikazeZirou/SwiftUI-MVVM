@@ -23,6 +23,12 @@ struct LoginView: View {
 
             SecureField("Password", text: $vm.password)
                 .textFieldStyle(RoundedBorderTextFieldStyle())
+            
+            if (!vm.validationText.isEmpty) {
+                Text(vm.validationText)
+                    .font(.caption)
+                    .foregroundColor(Color.red)
+            }
 
             Button(action: {
                 _ = self.vm.login()

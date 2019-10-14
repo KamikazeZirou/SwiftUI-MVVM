@@ -10,7 +10,7 @@ import Foundation
 import Combine
 
 enum AuthError: Error {
-    case invalidUserIdOrPassword
+    case invalidIdOrPassword
 }
 
 protocol AuthProviderProtocol {
