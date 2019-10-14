@@ -15,7 +15,8 @@ struct HomeView: View {
         VStack {
             Text("Hello \(self.session.user!.name)!")
             Button(action: {
-                
+                self.session.isLogin = false
+                self.session.user = nil
             }) {
                 Text("Logout")
             }

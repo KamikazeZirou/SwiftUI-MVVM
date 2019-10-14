@@ -1,5 +1,5 @@
 //
-//  LoginModel.swift
+//  AuthProvider.swift
 //  SwiftUI-MVVM
 //
 //  Created by kamikaze on 2019/10/14.
@@ -9,13 +9,13 @@
 import Foundation
 import Combine
 
-final class LoginModel: LoginModelProtocol {
+final class AuthProvider: AuthProviderProtocol {
     func login(userName: String, password: String) -> Future<User, Error> {
         return Future<User, Error> { [weak self] promise in
             if userName == "foobar@example.com" && password == "password" {
                 promise(.success(User(id: 1, name: userName)))
             } else {
-                promise(.failure(LoginError.invalidUserNameOrPassword))
+                promise(.failure(AuthError.invalidUserNameOrPassword))
             }
         }
     }

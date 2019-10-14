@@ -11,7 +11,7 @@ import Combine
 
 final class LoginViewModel: ObservableObject {
     // MARK: Private
-    private let model: LoginModelProtocol
+    private let authProvider: AuthProviderProtocol
     
     // MARK: Input
     @Published var userName: String = ""
@@ -31,11 +31,11 @@ final class LoginViewModel: ObservableObject {
     
     // MARK: Action
     func login() -> Future<User, Error> {
-        return model.login(userName: userName, password: password)
+        return authProvider.login(userName: userName, password: password)
     }
     
-    init(model: LoginModelProtocol = LoginModel()) {
-        self.model = model
+    init(authProvider: AuthProviderProtocol = AuthProvider()) {
+        self.authProvider = authProvider
         
         _ = validate
             .receive(on: RunLoop.main)

@@ -1,5 +1,5 @@
 //
-//  LoginModelProtocol.swift
+//  AuthProviderProtocol.swift
 //  SwiftUI-MVVM
 //
 //  Created by kamikaze on 2019/10/14.
@@ -9,10 +9,10 @@
 import Foundation
 import Combine
 
-enum LoginError: Error {
+enum AuthError: Error {
     case invalidUserNameOrPassword
 }
 
-protocol LoginModelProtocol {
+protocol AuthProviderProtocol {
     func login(userName: String, password: String) -> Future<User, Error>
 }
