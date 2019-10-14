@@ -9,6 +9,7 @@
 import SwiftUI
 
 struct LoginView: View {
+    @EnvironmentObject var session: Session
     @ObservedObject var vm = LoginViewModel()
 
     var body: some View {
@@ -28,8 +29,10 @@ struct LoginView: View {
                     .receive(on: RunLoop.main)
                     .sink(receiveCompletion: { err in
                         print("receiveCompletion:", err)
-                    }, receiveValue: { value in
-                        print("username:", value.name)
+                    }, receiveValue: { user in
+                        print("username:", user.name)
+                        self.session.user = user
+                        self.session.isLogin = true
                     })
             }) {
                 Text(/*@START_MENU_TOKEN@*/"Login"/*@END_MENU_TOKEN@*/)

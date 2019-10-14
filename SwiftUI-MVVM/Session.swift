@@ -1,5 +1,5 @@
 //
-//  User.swift
+//  Session.swift
 //  SwiftUI-MVVM
 //
 //  Created by kamikaze on 2019/10/14.
@@ -9,7 +9,7 @@
 import Combine
 import SwiftUI
 
-struct User {
-    var id: Int = -1
-    var name: String = ""
+final class Session: ObservableObject {
+    @Published var isLogin: Bool = false
+    @Published var user: User? = nil
 }

@@ -19,6 +19,9 @@
 		F8D66B7623547F43003D1E46 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D66B7523547F43003D1E46 /* User.swift */; };
 		F8D66B7A23548BD5003D1E46 /* LoginModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D66B7923548BD5003D1E46 /* LoginModelProtocol.swift */; };
 		F8D66B7C23548C41003D1E46 /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D66B7B23548C41003D1E46 /* LoginModel.swift */; };
+		F8D66B7E2354904A003D1E46 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D66B7D2354904A003D1E46 /* RootView.swift */; };
+		F8D66B8223549542003D1E46 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D66B8123549542003D1E46 /* Session.swift */; };
+		F8D66B842354971F003D1E46 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D66B832354971F003D1E46 /* HomeView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +60,9 @@
 		F8D66B7523547F43003D1E46 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		F8D66B7923548BD5003D1E46 /* LoginModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModelProtocol.swift; sourceTree = "<group>"; };
 		F8D66B7B23548C41003D1E46 /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
+		F8D66B7D2354904A003D1E46 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
+		F8D66B8123549542003D1E46 /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
+		F8D66B832354971F003D1E46 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,11 +115,14 @@
 			children = (
 				F89C00B1235462CC00282238 /* AppDelegate.swift */,
 				F89C00B3235462CC00282238 /* SceneDelegate.swift */,
+				F8D66B7D2354904A003D1E46 /* RootView.swift */,
 				F89C00B5235462CC00282238 /* LoginView.swift */,
 				F89C00E12354634600282238 /* LoginViewModel.swift */,
 				F8D66B7923548BD5003D1E46 /* LoginModelProtocol.swift */,
 				F8D66B7B23548C41003D1E46 /* LoginModel.swift */,
+				F8D66B832354971F003D1E46 /* HomeView.swift */,
 				F8D66B7523547F43003D1E46 /* User.swift */,
+				F8D66B8123549542003D1E46 /* Session.swift */,
 				F89C00B7235462CD00282238 /* Assets.xcassets */,
 				F89C00BC235462CD00282238 /* LaunchScreen.storyboard */,
 				F89C00BF235462CD00282238 /* Info.plist */,
@@ -279,9 +288,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F8D66B8223549542003D1E46 /* Session.swift in Sources */,
+				F8D66B7E2354904A003D1E46 /* RootView.swift in Sources */,
 				F89C00E22354634600282238 /* LoginViewModel.swift in Sources */,
 				F8D66B7C23548C41003D1E46 /* LoginModel.swift in Sources */,
 				F8D66B7A23548BD5003D1E46 /* LoginModelProtocol.swift in Sources */,
+				F8D66B842354971F003D1E46 /* HomeView.swift in Sources */,
 				F89C00B2235462CC00282238 /* AppDelegate.swift in Sources */,
 				F89C00B4235462CC00282238 /* SceneDelegate.swift in Sources */,
 				F8D66B7623547F43003D1E46 /* User.swift in Sources */,
