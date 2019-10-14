@@ -16,7 +16,7 @@ struct HomeView: View {
         VStack {
             Text("Hello \(self.session.user?.name ?? "")!")
             Button(action: {
-                self.vm.logout()
+                _ = self.vm.logout()
                     .receive(on: RunLoop.main)
                     .sink(receiveCompletion: { err in
                         self.session.user = nil

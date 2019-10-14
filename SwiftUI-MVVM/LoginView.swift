@@ -25,7 +25,7 @@ struct LoginView: View {
                 .textFieldStyle(RoundedBorderTextFieldStyle())
 
             Button(action: {
-                self.vm.login()
+                _ = self.vm.login()
                     .receive(on: RunLoop.main)
                     .sink(receiveCompletion: { err in
                         print("receiveCompletion:", err)
