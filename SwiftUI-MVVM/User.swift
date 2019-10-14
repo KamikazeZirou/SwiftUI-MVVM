@@ -10,6 +10,6 @@ import Combine
 import SwiftUI
 
 struct User {
-    var id: Int = -1
+    var id: String = ""
     var name: String = ""
 }

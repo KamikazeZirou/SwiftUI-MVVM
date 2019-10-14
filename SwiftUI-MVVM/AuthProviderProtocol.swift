@@ -10,10 +10,10 @@ import Foundation
 import Combine
 
 enum AuthError: Error {
-    case invalidUserNameOrPassword
+    case invalidUserIdOrPassword
 }
 
 protocol AuthProviderProtocol {
-    func login(userName: String, password: String) -> Future<User, Error>
+    func login(userId: String, password: String) -> Future<User, Error>
     func logout() -> Future<Void, Error>
 }

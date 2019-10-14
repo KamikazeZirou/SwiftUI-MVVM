@@ -17,7 +17,7 @@ struct LoginView: View {
             Text("Learning SwifUI-MVVM")
                 .font(.title)
 
-            TextField("User Name", text: $vm.userName)
+            TextField("User Name", text: $vm.userId)
                 .textFieldStyle(RoundedBorderTextFieldStyle())
                 .autocapitalization(UITextAutocapitalizationType.none)
 
@@ -30,7 +30,7 @@ struct LoginView: View {
                     .sink(receiveCompletion: { err in
                         print("receiveCompletion:", err)
                     }, receiveValue: { user in
-                        print("username:", user.name)
+                        print("userId:", user.id)
                         self.session.user = user
                         self.session.isLogin = true
                     })

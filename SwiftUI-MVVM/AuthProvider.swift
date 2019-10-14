@@ -10,12 +10,12 @@ import Foundation
 import Combine
 
 final class AuthProvider: AuthProviderProtocol {
-    func login(userName: String, password: String) -> Future<User, Error> {
+    func login(userId: String, password: String) -> Future<User, Error> {
         return Future<User, Error> { promise in
-            if userName == "foobar@example.com" && password == "password" {
-                promise(.success(User(id: 1, name: userName)))
+            if userId == "foobar@example.com" && password == "password" {
+                promise(.success(User(id: userId, name: "foobar")))
             } else {
-                promise(.failure(AuthError.invalidUserNameOrPassword))
+                promise(.failure(AuthError.invalidUserIdOrPassword))
             }
         }
     }

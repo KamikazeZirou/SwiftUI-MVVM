@@ -14,7 +14,7 @@ final class LoginViewModel: ObservableObject {
     private let authProvider: AuthProviderProtocol
     
     // MARK: Input
-    @Published var userName: String = ""
+    @Published var userId: String = ""
     @Published var password: String = ""
     
     // MARK: Output
@@ -22,16 +22,16 @@ final class LoginViewModel: ObservableObject {
     
     var validate: AnyPublisher<Bool, Never> {
         Publishers
-            .CombineLatest($userName, $password)
-            .map { userName, password in
-                return !userName.isEmpty && !password.isEmpty
+            .CombineLatest($userId, $password)
+            .map { userId, password in
+                return !userId.isEmpty && !password.isEmpty
             }
             .eraseToAnyPublisher()
     }
     
     // MARK: Action
     func login() -> Future<User, Error> {
-        return authProvider.login(userName: userName, password: password)
+        return authProvider.login(userId: userId, password: password)
     }
     
     init(authProvider: AuthProviderProtocol = AuthProvider()) {
