@@ -10,7 +10,7 @@ import SwiftUI
 
 struct LoginView: View {
     @EnvironmentObject var session: Session
-    @ObservedObject var vm = LoginViewModel()
+    @ObservedObject private var vm = LoginViewModel()
 
     var body: some View {
         VStack {
