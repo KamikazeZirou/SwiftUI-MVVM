@@ -26,6 +26,13 @@ final class LoginViewModel: ObservableObject {
             .eraseToAnyPublisher()
     }
     
+    // MARK: Action
+    func login() -> Future<User, Error> {
+        return Future<User, Error> { [weak self] promise in
+            promise(.success(User(name: self?.userName ?? "")))
+        }
+    }
+    
     init() {
         _ = validate
             .receive(on: RunLoop.main)

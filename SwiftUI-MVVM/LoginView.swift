@@ -23,6 +23,13 @@ struct LoginView: View {
                 .textFieldStyle(RoundedBorderTextFieldStyle())
 
             Button(action: {
+                self.vm.login()
+                    .receive(on: RunLoop.main)
+                    .sink(receiveCompletion: { err in
+                        print("receiveCompletion:", err)
+                    }, receiveValue: { value in
+                        print("username:", value.name)
+                    })
             }) {
                 Text(/*@START_MENU_TOKEN@*/"Login"/*@END_MENU_TOKEN@*/)
             }
