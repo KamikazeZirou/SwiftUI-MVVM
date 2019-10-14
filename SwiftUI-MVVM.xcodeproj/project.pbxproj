@@ -92,6 +92,36 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F815E9932354DD4100D28785 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F8D66B7D2354904A003D1E46 /* RootView.swift */,
+				F89C00B5235462CC00282238 /* LoginView.swift */,
+				F8D66B832354971F003D1E46 /* HomeView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F815E9942354DD9600D28785 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F8D66B7B23548C41003D1E46 /* AuthProvider.swift */,
+				F8D66B7523547F43003D1E46 /* User.swift */,
+				F8D66B8123549542003D1E46 /* Session.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F815E9952354DDAC00D28785 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				F89C00E12354634600282238 /* LoginViewModel.swift */,
+				F8D66B7923548BD5003D1E46 /* AuthProviderProtocol.swift */,
+				F8D66B8523549A2D003D1E46 /* HomeViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		F89C00A5235462CC00282238 = {
 			isa = PBXGroup;
 			children = (
@@ -115,17 +145,11 @@
 		F89C00B0235462CC00282238 /* SwiftUI-MVVM */ = {
 			isa = PBXGroup;
 			children = (
+				F815E9942354DD9600D28785 /* Model */,
+				F815E9932354DD4100D28785 /* View */,
+				F815E9952354DDAC00D28785 /* ViewModel */,
 				F89C00B1235462CC00282238 /* AppDelegate.swift */,
 				F89C00B3235462CC00282238 /* SceneDelegate.swift */,
-				F8D66B7D2354904A003D1E46 /* RootView.swift */,
-				F89C00B5235462CC00282238 /* LoginView.swift */,
-				F89C00E12354634600282238 /* LoginViewModel.swift */,
-				F8D66B7923548BD5003D1E46 /* AuthProviderProtocol.swift */,
-				F8D66B7B23548C41003D1E46 /* AuthProvider.swift */,
-				F8D66B832354971F003D1E46 /* HomeView.swift */,
-				F8D66B8523549A2D003D1E46 /* HomeViewModel.swift */,
-				F8D66B7523547F43003D1E46 /* User.swift */,
-				F8D66B8123549542003D1E46 /* Session.swift */,
 				F89C00B7235462CD00282238 /* Assets.xcassets */,
 				F89C00BC235462CD00282238 /* LaunchScreen.storyboard */,
 				F89C00BF235462CD00282238 /* Info.plist */,
