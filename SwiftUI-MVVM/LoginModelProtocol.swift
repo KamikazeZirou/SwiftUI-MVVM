@@ -9,6 +9,10 @@
 import Foundation
 import Combine
 
+enum LoginError: Error {
+    case invalidUserNameOrPassword
+}
+
 protocol LoginModelProtocol {
     func login(userName: String, password: String) -> Future<User, Error>
 }

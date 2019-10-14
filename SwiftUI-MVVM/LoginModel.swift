@@ -12,8 +12,11 @@ import Combine
 final class LoginModel: LoginModelProtocol {
     func login(userName: String, password: String) -> Future<User, Error> {
         return Future<User, Error> { [weak self] promise in
-            Thread.sleep(forTimeInterval: 1.0)
-            promise(.success(User(name: userName)))
+            if userName == "foobar@example.com" && password == "password" {
+                promise(.success(User(name: userName)))
+            } else {
+                promise(.failure(LoginError.invalidUserNameOrPassword))
+            }
         }
     }
 }
