@@ -12,25 +12,32 @@ import Combine
 final class LoginViewModel: ObservableObject {
     // MARK: Private
     private let authProvider: AuthProviderProtocol
+    @Published private var isBusy: Bool = false
     
     // MARK: Input
     @Published var userId: String = ""
     @Published var password: String = ""
     
     // MARK: Output
-    @Published private(set) var isValid: Bool = false
+    @Published private(set) var canLogin: Bool = false
     @Published private(set) var validationText: String = ""
     
     // MARK: Action
     func login() -> AnyPublisher<User, Error> {
+        isBusy = true
+        validationText = ""
+        
         return authProvider.login(userId: userId, password: password)
-            .handleEvents(receiveCompletion: { completion in
+            .receive(on: RunLoop.main)
+            .handleEvents(receiveCompletion: { [weak self] completion in
                 switch completion {
                 case .finished:
-                    self.validationText = ""
+                    self?.validationText = ""
                 case .failure:
-                    self.validationText = "Incorrect ID or password"
+                    self?.validationText = "Incorrect ID or password"
                 }
+                
+                self?.isBusy = false
             })
             .eraseToAnyPublisher()
     }
@@ -39,12 +46,11 @@ final class LoginViewModel: ObservableObject {
         self.authProvider = authProvider
         
         _ = Publishers
-            .CombineLatest($userId, $password)
-            .map { (userId, password) in
-                return !userId.isEmpty && !password.isEmpty
+            .CombineLatest3($userId, $password, $isBusy)
+            .map { (userId, password, isBusy) in
+                return !(userId.isEmpty || password.isEmpty || isBusy)
             }
-            .eraseToAnyPublisher()
             .receive(on: RunLoop.main)
-            .assign(to: \.isValid, on: self)
+            .assign(to: \.canLogin, on: self)
     }
 }

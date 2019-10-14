@@ -43,7 +43,7 @@ struct LoginView: View {
             }) {
                 Text(/*@START_MENU_TOKEN@*/"Login"/*@END_MENU_TOKEN@*/)
             }
-            .disabled(!vm.isValid)
+            .disabled(!vm.canLogin)
             
         }.padding()
     }
