@@ -17,6 +17,8 @@
 		F89C00D4235462CD00282238 /* SwiftUI_MVVMUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F89C00D3235462CD00282238 /* SwiftUI_MVVMUITests.swift */; };
 		F89C00E22354634600282238 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F89C00E12354634600282238 /* LoginViewModel.swift */; };
 		F8D66B7623547F43003D1E46 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D66B7523547F43003D1E46 /* User.swift */; };
+		F8D66B7A23548BD5003D1E46 /* LoginModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D66B7923548BD5003D1E46 /* LoginModelProtocol.swift */; };
+		F8D66B7C23548C41003D1E46 /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D66B7B23548C41003D1E46 /* LoginModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +55,8 @@
 		F89C00D5235462CD00282238 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F89C00E12354634600282238 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		F8D66B7523547F43003D1E46 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		F8D66B7923548BD5003D1E46 /* LoginModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModelProtocol.swift; sourceTree = "<group>"; };
+		F8D66B7B23548C41003D1E46 /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +111,8 @@
 				F89C00B3235462CC00282238 /* SceneDelegate.swift */,
 				F89C00B5235462CC00282238 /* LoginView.swift */,
 				F89C00E12354634600282238 /* LoginViewModel.swift */,
+				F8D66B7923548BD5003D1E46 /* LoginModelProtocol.swift */,
+				F8D66B7B23548C41003D1E46 /* LoginModel.swift */,
 				F8D66B7523547F43003D1E46 /* User.swift */,
 				F89C00B7235462CD00282238 /* Assets.xcassets */,
 				F89C00BC235462CD00282238 /* LaunchScreen.storyboard */,
@@ -274,6 +280,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				F89C00E22354634600282238 /* LoginViewModel.swift in Sources */,
+				F8D66B7C23548C41003D1E46 /* LoginModel.swift in Sources */,
+				F8D66B7A23548BD5003D1E46 /* LoginModelProtocol.swift in Sources */,
 				F89C00B2235462CC00282238 /* AppDelegate.swift in Sources */,
 				F89C00B4235462CC00282238 /* SceneDelegate.swift in Sources */,
 				F8D66B7623547F43003D1E46 /* User.swift in Sources */,

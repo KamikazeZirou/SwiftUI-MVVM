@@ -10,6 +10,9 @@ import Foundation
 import Combine
 
 final class LoginViewModel: ObservableObject {
+    // MARK: Private
+    private let model: LoginModelProtocol
+    
     // MARK: Input
     @Published var userName: String = ""
     @Published var password: String = ""
@@ -28,12 +31,12 @@ final class LoginViewModel: ObservableObject {
     
     // MARK: Action
     func login() -> Future<User, Error> {
-        return Future<User, Error> { [weak self] promise in
-            promise(.success(User(name: self?.userName ?? "")))
-        }
+        return model.login(userName: userName, password: password)
     }
     
-    init() {
+    init(model: LoginModelProtocol = LoginModel()) {
+        self.model = model
+        
         _ = validate
             .receive(on: RunLoop.main)
             .assign(to: \.isValid, on: self)
