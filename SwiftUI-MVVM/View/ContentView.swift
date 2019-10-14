@@ -1,5 +1,5 @@
 //
-//  RootView.swift
+//  CotentView.swift
 //  SwiftUI-MVVM
 //
 //  Created by kamikaze on 2019/10/14.
@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-struct RootView: View {
+struct CotentView: View {
     @EnvironmentObject var session: Session
 
     var body: some View {
@@ -24,9 +24,9 @@ struct RootView: View {
     }
 }
 
-struct RootView_Previews: PreviewProvider {
+struct CotentView_Previews: PreviewProvider {
     static var previews: some View {
-        RootView()
+        CotentView()
             .environmentObject(Session())
     }
 }
