@@ -32,7 +32,6 @@ struct LoginView: View {
 
             Button(action: {
                 _ = self.vm.login()
-                    .receive(on: RunLoop.main)
                     .sink(receiveCompletion: { completion in
                         print("receiveCompletion:", completion)
                     }, receiveValue: { user in

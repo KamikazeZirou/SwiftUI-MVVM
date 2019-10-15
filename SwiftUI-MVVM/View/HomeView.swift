@@ -17,7 +17,6 @@ struct HomeView: View {
             Text("Hello \(self.session.user?.name ?? "")!")
             Button(action: {
                 _ = self.vm.logout()
-                    .receive(on: RunLoop.main)
                     .sink(receiveCompletion: { err in
                         self.session.user = nil
                         self.session.isLogin = false
