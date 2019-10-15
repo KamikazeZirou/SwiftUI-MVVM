@@ -17,7 +17,7 @@ struct LoginView: View {
             Text("Learning SwifUI-MVVM")
                 .font(.title)
 
-            TextField("User Name", text: $vm.userId)
+            TextField("User ID", text: $vm.userId)
                 .textFieldStyle(RoundedBorderTextFieldStyle())
                 .autocapitalization(UITextAutocapitalizationType.none)
 
