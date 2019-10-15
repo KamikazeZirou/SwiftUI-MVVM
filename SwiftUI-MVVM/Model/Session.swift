@@ -7,7 +7,6 @@
 //
 
 import Combine
-import SwiftUI
 
 final class Session: ObservableObject {
     @Published var isLogin: Bool

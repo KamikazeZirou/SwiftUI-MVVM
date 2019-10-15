@@ -95,7 +95,6 @@
 		F815E9932354DD4100D28785 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				F8D66B8123549542003D1E46 /* Session.swift */,
 				F8D66B7D2354904A003D1E46 /* ContentView.swift */,
 				F89C00B5235462CC00282238 /* LoginView.swift */,
 				F8D66B832354971F003D1E46 /* HomeView.swift */,
@@ -106,6 +105,7 @@
 		F815E9942354DD9600D28785 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				F8D66B8123549542003D1E46 /* Session.swift */,
 				F8D66B7923548BD5003D1E46 /* AuthProviderProtocol.swift */,
 				F8D66B7B23548C41003D1E46 /* AuthProvider.swift */,
 				F8D66B7523547F43003D1E46 /* User.swift */,
