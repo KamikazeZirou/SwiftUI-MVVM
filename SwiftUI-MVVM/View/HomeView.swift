@@ -10,7 +10,7 @@ import SwiftUI
 
 struct HomeView: View {
     @EnvironmentObject var session: Session
-    private var vm = HomeViewModel()
+    @ObservedObject private var vm = HomeViewModel()
     
     var body: some View {
         VStack {
@@ -24,7 +24,7 @@ struct HomeView: View {
                     }, receiveValue: {})
             }) {
                 Text("Logout")
-            }
+            }.disabled(!vm.canLogin)
         }
     }
 }

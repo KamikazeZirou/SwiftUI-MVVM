@@ -33,6 +33,9 @@ final class AuthProvider: AuthProviderProtocol {
         // Therefore, wrap it with DispatchQueue.global().async
         return Future<Void, Error> { promise in
             DispatchQueue.global().async {
+                // Intended to network communicate
+                Thread.sleep(forTimeInterval: 1.0)
+                
                 promise(.success(()))
             }
         }
