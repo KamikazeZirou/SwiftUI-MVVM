@@ -1,0 +1,71 @@
+@startuml
+scale 640 width
+
+package "View" #FFEEEE {
+    class ContentView {
+        -session: Session
+    }
+    note right of ContentView
+        ログインしていないならLoginViewを表示。
+        そうでないならHomeViewを表示。
+    end note
+
+    class LoginView {
+        -session: Session
+        -画面タイトル
+        -IDの入力フィールド
+        -Passwordの入力フィールド
+        -ログインボタン
+    }
+
+    class HomeView {
+        -session: Session
+        -ログイン後の挨拶メッセージ
+        -ログアウトボタン
+    }
+}
+
+package "ViewModel" #EEFFEE {
+    class LoginViewModel {
+        +id
+        +password
+        +validationText
+        +canLogin
+
+        +login() : AnyPublisher
+    }
+
+    class HomeViewModel {
+        +logout() : AnyPublisher
+    }
+}
+
+package "Model" #EEEEFF {
+    class AuthProvider {
+            +login(id, password) : Future
+            +logout() : Future
+    }
+    class User {
+        +id
+        +name
+    }
+
+    class Session {
+        +isLogin
+    }
+}
+
+ContentView o--> LoginView
+ContentView o--> HomeView
+
+LoginView *--> LoginViewModel
+HomeView *--> HomeViewModel
+
+LoginViewModel o--> AuthProvider
+HomeViewModel o--> AuthProvider
+
+AuthProvider --> User :create
+
+Session o--> User
+
+@enduml
